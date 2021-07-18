@@ -46,27 +46,30 @@ type Payload struct {
 			Duration             int      `json:"duration"`
 			DurationInForeground int      `json:"durationInForeground"`
 			InForeground         bool     `json:"inForeground"`
+			BinaryArch           string   `json:"binaryArch"`
+			RunningOnRosetta     bool     `json:"runningOnRosetta"`
 		} `json:"app"`
 		Device struct {
-			Hostname       string    `json:"hostname"`
-			ID             string    `json:"id"`
-			Manufacturer   string    `json:"manufacturer"`
-			Model          string    `json:"model"`
-			ModelNumber    string    `json:"modelNumber"`
-			OsName         string    `json:"osName"`
-			OsVersion      string    `json:"osVersion"`
-			FreeMemory     int       `json:"freeMemory"`
-			TotalMemory    int       `json:"totalMemory"`
-			FreeDisk       int64     `json:"freeDisk"`
-			BrowserName    string    `json:"browserName"`
-			BrowserVersion string    `json:"browserVersion"`
-			Jailbroken     bool      `json:"jailbroken"`
-			Orientation    string    `json:"orientation"`
-			Locale         string    `json:"locale"`
-			Charging       bool      `json:"charging"`
-			BatteryLevel   float64   `json:"batteryLevel"`
-			Time           time.Time `json:"time"`
-			Timezone       string    `json:"timezone"`
+			Hostname              string    `json:"hostname"`
+			ID                    string    `json:"id"`
+			Manufacturer          string    `json:"manufacturer"`
+			Model                 string    `json:"model"`
+			ModelNumber           string    `json:"modelNumber"`
+			OsName                string    `json:"osName"`
+			OsVersion             string    `json:"osVersion"`
+			FreeMemory            int       `json:"freeMemory"`
+			TotalMemory           int       `json:"totalMemory"`
+			FreeDisk              int64     `json:"freeDisk"`
+			BrowserName           string    `json:"browserName"`
+			BrowserVersion        string    `json:"browserVersion"`
+			Jailbroken            bool      `json:"jailbroken"`
+			Orientation           string    `json:"orientation"`
+			Locale                string    `json:"locale"`
+			Charging              bool      `json:"charging"`
+			BatteryLevel          float64   `json:"batteryLevel"`
+			Time                  time.Time `json:"time"`
+			Timezone              string    `json:"timezone"`
+			MacCatalystiOSVersion string    `json:"macCatalystiOSVersion"`
 		} `json:"device"`
 		User struct {
 			ID    string `json:"id"`
@@ -88,5 +91,6 @@ type Payload struct {
 				Num127 string `json:"127"`
 			} `json:"code,omitempty"`
 		} `json:"stackTrace"`
+		Breadcrumbs []interface{} `json:"breadcrumbs"`
 	} `json:"error"`
 }
