@@ -16,7 +16,8 @@ func Run() {
 		})
 	})
 	r.POST("/ping", func(c *gin.Context) {
-		log.Println("post", c)
+		data, _ := c.GetRawData()
+		log.Println("post", string(data))
 
 		c.JSON(200, gin.H{
 			"message": "pong",
